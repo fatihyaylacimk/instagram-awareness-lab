@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Instagram Güvenlik Farkındalığı — Eğitim Laboratuvarı</title>
+<meta name="description" content="Siber güvenlik dersleri için kimlik avı farkındalık ve güvenli bağlantı kontrolü laboratuvarı.">
+<style>
+:root{color-scheme:dark;--bg:#090d1b;--card:#151d32;--edge:#293755;--text:#edf3ff;--muted:#b6c6e3;--accent:#7e9dff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#1d2850,var(--bg) 65%);font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--text)}
+main{max-width:830px;margin:40px auto;padding:0 18px 60px}header{text-align:center;padding:30px 0}
+h1{font-size:clamp(1.7rem,5vw,2.5rem);margin:0}h2{font-size:1.25rem;margin:0 0 16px}
+small,.muted{color:var(--muted)}.card{background:var(--card);border:1px solid var(--edge);border-radius:18px;padding:26px;margin:20px 0;box-shadow:0 12px 40px #0002}
+.tag{display:inline-block;border:1px solid #7791cc;border-radius:20px;padding:5px 13px;font-weight:700;font-size:.8rem;letter-spacing:.05em;color:#c5d5ff}
+.email{background:#0d1528;border:1px solid var(--edge);border-radius:12px;padding:19px;margin:18px 0}
+button{background:var(--accent);color:#0a1230;font-weight:800;border:0;border-radius:10px;padding:13px 20px;cursor:pointer}
+button:focus-visible{outline:3px solid #fff;outline-offset:3px}button:hover{filter:brightness(1.09)}
+.output{display:none;background:#102b2a;border:1px solid #348b83;border-radius:10px;padding:17px;margin-top:16px}
+.note{border-left:4px solid #ffc66d;padding-left:14px;color:#ffe8bd}code{overflow-wrap:anywhere;color:#b1c8ff}
+footer{text-align:center;color:var(--muted);font-size:.88rem}
+</style>
+</head>
+<body>
+<main>
+<header>
+<span class="tag">SİBER GÜVENLİK DERSİ • EĞİTİM ORTAMI</span>
+<h1>Instagram Hesap Güvenliği Laboratuvarı</h1>
+<p class="muted">Phishing farkındalığı ve şüpheli bağlantı analizi</p>
+</header>
+<section class="card">
+<h2>1. Örnek güvenlik e-postası</h2>
+<p>Bu mesaj tamamen hayalîdir. Gerçek bir Instagram bildirimi değildir.</p>
+<div class="email">
+<p><strong>Gönderen:</strong> bildirim@guvenlik-ornegi.example.invalid</p>
+<p><strong>Konu:</strong> Hesabınız 10 dakika içinde kilitlenecek!</p>
+<p>Hesabınıza olağan dışı giriş yapıldı. Hemen kimliğinizi doğrulayın.</p>
+<p><strong>Örnek bağlantı:</strong> <code>https://login-kontrol.example.invalid/verify</code></p>
+</div>
+<button type="button" id="analyze">Şüpheli işaretleri göster</button>
+<div class="output" id="analysis" role="status">
+<strong>Bulunan riskler:</strong>
+<ol>
+<li>Alan adı Instagram'a ait değil.</li>
+<li>Mesaj acele ettirerek baskı kuruyor.</li>
+<li>Bağlantı bir kimlik doğrulama bahanesi kullanıyor.</li>
+<li>Şifre ve iki faktörlü kodlar yalnızca resmi uygulamada kullanılmalı.</li>
+</ol>
+</div>
+</section>
+<section class="card">
+<h2>2. Güvenli karar testi</h2>
+<p>Tanımadığınız bir bağlantı sizden hesap şifresi istiyor. Nasıl davranmalısınız?</p>
+<button type="button" id="stop">Bağlantıyı kapatıp resmi uygulamayı aç</button>
+<div class="output" id="decision" role="status">
+<strong>Doğru yaklaşım.</strong> Bağlantıda giriş yapmadınız. Hesabı doğrudan resmi Instagram uygulamasından kontrol edin.
+</div>
+</section>
+<section class="card">
+<h2>3. Teknik kapsam</h2>
+<p class="note">Bu web sitesi gerçek giriş formu içermez; şifre, çerez, oturum veya kişisel veri toplamaz. İnternet erişimi yalnızca statik sayfayı görüntülemek içindir.</p>
+<p><strong>Öğrenme hedefleri:</strong> sosyal mühendislik, URL doğrulama, kimlik avı belirtileri ve güvenli kullanıcı davranışı.</p>
+</section>
+<footer>Bağımsız eğitim çalışmasıdır. Instagram veya Meta ile bağlantılı değildir.</footer>
+</main>
+<script>
+document.getElementById('analyze').addEventListener('click',()=>{document.getElementById('analysis').style.display='block'});
+document.getElementById('stop').addEventListener('click',()=>{document.getElementById('decision').style.display='block'});
+</script>
+</body>
+</html>
